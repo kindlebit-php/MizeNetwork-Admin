@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html ng-app="mmn" class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths ng-scope" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{{title}}</title>
+
+    <!-- Site Icons -->
+    <link rel="apple-touch-icon" href="">
+    <link rel="icon" href="">
+
+    <!-- Fonts -->
+   <!-- Site Icons -->
+    <link rel="apple-touch-icon" href="">
+    <link rel="icon" href="">
+ 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <!-- Framework -->
+        <!--  <link rel="stylesheet" href="static/public/style/bootstrap.min.css"> -->
+
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/css/vendor/bootstrap.min.css">
+    <!-- Icon Fonts -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/plugins/stepy/jquery.stepy.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.22.2/sweetalert2.min.css">
+
+    <!-- Plugins -->
+    <!--<link rel="stylesheet" href="assets/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css">-->
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/plugins/datepicker/css/datepicker.min.css">
+    <!--<link rel="stylesheet" href="assets/plugins/medium-editor/css/medium-editor.min.css">-->
+    <!--<link rel="stylesheet" href="assets/plugins/medium-editor/css/themes/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="assets/plugins/morris/morris.min.css">-->
+    <!--<link rel="stylesheet" href="assets/plugins/prettify/themes/tomorrow-night.min.css">-->
+    <!--<link rel="stylesheet" href="assets/plugins/selectize/css/selectize.min.css">-->
+    <!--<link rel="stylesheet" href="assets/plugins/sortable/sortable.min.css">-->
+    <!--<link rel="stylesheet" href="assets/plugins/stepy/jquery.stepy.min.css">-->
+    <!--<link rel="stylesheet" href="assets/plugins/pace/pace.css">-->
+    <!--<link rel="stylesheet" href="assets/plugins/summernote/summernote.min.css">-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+
+
+    <!-- Main Template CSS -->
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/css/style.css">
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/css/helper.css">
+
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/css/your-style.css">
+</head>
+
+<body ng-controller="mmnController as mmnCTRL" class="ng-scope">
+
+<div id="rs-wrapper">
+
+    <!-- BEGIN MAIN HEADER NAV -->
+    <nav class="navbar navbar-default rs-navbar navbar-static-top logado" style="background: rgb(239, 141, 3) none repeat scroll 0% 0%;" ng-show="$authentication.data.logado">
+        <div class="container-fluid">
+
+            <!--
+            Begin navbar header
+            Brand and toggle get grouped for better mobile display
+            -->
+            <div class="navbar-header has-right-divider">
+
+                <!-- Begin Logo Brand
+                Available class : .fixed-width
+                -->
+                <div class="rs-logo fixed-width">
+                    <!-- Main Image logo -->
+                    <a class="navbar-brand" href="#/home" style="font-size: 40px; margin-left: 23px;">
+                        Admin
+                    </a>
+                    <!-- Main small logo -->
+                    <!-- <a class="navbar-brand" href="index.html">
+                    <img alt="Brand" src="assets/img/logo-small.png">
+                    </a> -->
+                    <!-- Text logo -->
+                    <!-- <a class="navbar-brand text-uppercase rs-brand-text" href="index.html">
+                    Roosa
+                    </a> -->
+                    <!-- Initial text / icon logo -->
+                    <!-- <a class="navbar-brand rs-brand-text brand-initial" href="index.html">
+                    <i class="gcon gcon-twitter text-info"></i>
+                    </a> -->
+                </div><!-- /.rs-logo -->
+                <!-- End Logo Brand -->
+
+                <!-- Begin button to toggle sidebar -->
+                <button type="button" class="navbar-toggle collapsed sidebar-toggle" id="rs-sidebar-toggle-mobile">
+                    <span class="icon-bar" style="background-color: white;"></span>
+                    <span class="icon-bar" style="background-color: white;"></span>
+                    <span class="icon-bar" style="background-color: white;"></span>
+                </button>
+                <!-- End button to toggle sidebar -->
+
+                <!-- Begin button to toggle navbar element -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#roosa-nav-collapse" aria-expanded="false" onclick="setTimeout(function () {$('.open_menu').addClass('open')},1000);">
+
+                    <span style="color: white;" class="gcon gcon-dots-three-vertical f-s-sm"></span>
+                </button>
+                <!-- End button to toggle navbar element -->
+
+            </div><!-- /.navbar-header -->
+            <!-- End Navbar header -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="roosa-nav-collapse">
+
+                <!-- All left content goes here -->
+                <div class="navbar-left">
+
+
+
+                    <!-- Begin nav search form -->
+
+                    <!-- End nav search form -->
+
+                </div><!-- /.navbar-left -->
+                <!-- End navbar left content -->
+
+                <!-- All right content goes here -->
+                <div class="navbar-right">
+
+                    <ul class="nav navbar-nav">
+                        <!-- Begin user menu -->
+                        <li class="rs-user-nav dropdown open_menu">
+                            <a href="javascript:void(0);" class="dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-gear" style="font-size: 40px; margin-top: 14px;"></i>
+                                <span class="visible-xs-inline-block m-l ng-binding" style="color: white;">suporte</span>
+                            </a>
+                            <!-- Dropdown -->
+                            <ul class="dropdown-menu lg-dropdown">
+                               
+                                <li class="menu-icon"><a href="javascript:void(0);" ng-click="mmnCTRL.logout()"><span class="gcon gcon-log-out rs-dropdown-icon"></span>Log Out</a></li>
+                            </ul>
+                            <!-- End dropdown -->
+                        </li>
+                        <!-- End user menu -->
+                    </ul>
+                </div><!-- /.navbar-right -->
+                <!-- End navbar right content -->
+
+            </div><!-- /.collapse navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!-- END MAIN HEADER NAV -->

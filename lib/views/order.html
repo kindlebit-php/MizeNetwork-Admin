@@ -1,0 +1,119 @@
+<article class="rs-content-wrapper">
+        <div class="rs-content">
+    <div class="rs-inner ng-scope" ng-view="">
+    <style class="ng-scope">
+
+    .filters a.active {
+        color: #71b6f9 !important;
+    }
+
+    #tech-companies-1 td {
+        line-height: 34px;
+    }
+  #DataTableable_filter label {
+    background: #4fc3f7;
+    color: #fff;
+    padding-left: 6px;
+    font-size: 13px;
+}
+    input[type="search"] {
+    border: 1px solid #e1e8ed;
+    padding: 3px;color: #333;
+    }
+</style>
+
+
+
+<!-- Begin Dashhead -->
+<div class="rs-dashhead m-b-lg ng-scope">
+    <div class="rs-dashhead-content">
+        <div class="rs-dashhead-titles">
+            <h3 class="rs-dashhead-title m-t">Orders</h3>
+            <!-- Begin Toolbar toggle button on mobile -->
+            <div class="rs-dashhead-toolbar" style="margin-top: -20px;">
+
+            </div>
+            <!-- End Toolbar toggle button on mobile -->
+        </div><!-- /.rs-dashhead-titles -->
+              <!--<div class="rs-dashhead-toolbar">-->
+              <!--<button type="button" class="btn btn-success btn-wide rs-btn-icon block-on-mobile">-->
+              <!--<span class="gcon gcon-upload-to-cloud icon-btn"></span>-->
+              <!--Upload Item-->
+              <!--</button>-->
+              <!--</div>&lt;!&ndash; /.rs-dashhead-toolbar &ndash;&gt;-->
+    </div><!-- /.rs-dashhead-content -->
+          <!-- Begin Breadcrumb -->
+    <ol class="breadcrumb breadcrumb-arrow">
+        <li class="active">Order List</li>
+    </ol>
+          <!-- End Breadcrumb -->
+</div><!-- /.rs-dashhead -->
+<!-- End Dashhead -->
+{{{err}}}
+<div class="container-fluid ng-scope">
+    <div class="row">
+        <div class="panel panel-plain" style="    padding: 15px;">
+            <div class="panel-body p-t-0 p-b-0" style="padding: 0px;">
+                <div class="col-md-12">
+                    <div class="">
+                        <table class="table table-striped" style="width:100%; " >
+                            <thead>
+                            <tr>
+                                <th>User id</th>
+                                <th>OrderID</th>
+                                <th>Product Name</th>
+                                <th>Ewallet Address</th>
+                                <th>Amount</th>
+                                <th>Amount Euro</th>
+                                <th>Payment status</th>
+                                <th>Date payment</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                             {{#each data }}  
+                             
+                                <tr class="ng-scope">
+                                <td class="ng-binding">{{this.user_id}}</td>
+                                <td class="ng-binding">{{this.order_id}}</td>
+
+                                <td class="ng-binding">
+                                   {{this.product_name}}
+                                </td>
+                                <td class="ng-binding">
+                                    {{this.send_by_address}}
+                                </td>
+                                <td class="ng-binding">
+                                     {{this.amount}}
+                                </td>
+                                <td class="ng-binding">
+                                   {{this.amount_in_euro}}
+                                </td>
+                                <td class="ng-binding">
+                                   {{this.payment_status}}
+                                </td>
+                                <td class="ng-binding">
+                                   {{this.order_date_payment}}
+                                </td>
+                                
+                            </tr>  
+                            {{/each}}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+</div><!-- /.rs-inner -->
+        </div><!-- /.rs-content -->
+    </article>
+
+ 

@@ -1,0 +1,48 @@
+/*!
+------------------------------------
+* your-style.css
+* http://gentolab.com
+*
+* Copyright (c) 2017, GentoLab Team
+*
+*
+------------------------------------
+TABLE OF CONTENT
+------------------------------------
+01. ...
+------------------------------------
+*/
+
+/* Your own custom css goes here */
+/* It will helps you when you get the latest update from us */
+/* You don't need to change anything in main template CSS */
+
+.navbar-brand > img {
+    max-height: 62px;
+    margin-left: 5px;
+}
+
+.bg-black {
+    color: #fff !important;
+    background: #000000 !important;
+}
+
+.panel-black {
+    border-color: rgba(0, 0, 0, 0.77);
+}
+
+.bg-blue {
+    color: #fff !important;
+    background: #144e99 !important;
+}
+
+.panel-blue {
+    border-color: rgb(11, 16, 153);
+}
+
+@media (max-width: 768px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a, .navbar-default .navbar-nav .open .dropdown-menu > li > a small, .navbar-default .navbar-nav .open .dropdown-menu > li.dropdown-header, .navbar-default .navbar-nav .open .dropdown-menu > li > a span {
+        color: #FFFFFF !important;
+    }
+
+}

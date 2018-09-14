@@ -1,0 +1,193 @@
+<article  class="rs-content-wrapper">
+        <div class="rs-content">
+            <!-- ngView:  -->
+<div class="rs-inner ng-scope" ng-view=""><style class="ng-scope">
+    .peding_affiliates tr td {
+        vertical-align: middle !important;
+    }
+
+    .alert-black {
+        border-color: #000000 !important;
+    }
+
+    .alert.iconic-alert.alert-black .alert-icon {
+        background: #000000 !important;
+    }
+
+    .progress-bar-black .progress-bar {
+        color: white;
+        background-color: #000000 !important;
+    }
+
+    .progress-bar-success .progress-bar {
+        color: white;
+        background-color: #81c784;
+    !important;
+    }
+
+    .progress-bar-warning .progress-bar {
+        color: white;
+        background-color: #f6bb42!important;
+    }
+
+    .progress-bar-info .progress-bar {
+        color: white;
+        background-color: #4fc3f7!important;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        border-radius: 3px;
+        height: 32px;
+    }
+    
+    /*.table td:last-child {*/
+        /*text-align: right;*/
+    /*}*/
+
+    /*.table td:first-child {*/
+        /*font-weight: bold;*/
+    /*}*/
+    #usertable_filter label {
+    background: #4fc3f7;
+    color: #fff;
+    padding-left: 6px;
+    font-size: 13px;
+}
+    input[type="search"] {
+    border: 1px solid #e1e8ed;
+    padding: 3px;color: #333;
+    }
+    .dropdown-menu.dropdown-warning > li > a:hover, .dropdown-menu.dropdown-warning > li > a:focus {
+        background-color: #f4a911;
+        color: white;
+    }
+</style>
+
+
+<div class="container-fluid ng-scope">
+    <div class="row" style="margin-top: 10px">
+        <messages-global><!-- ngRepeat: (k,message) in msgGlobalCTRL.messages --></messages-global>
+    </div>
+
+
+    <!-- Begin Dashhead -->
+    <div class="rs-dashhead m-b-lg">
+        <div class="rs-dashhead-content">
+            <div class="rs-dashhead-titles">
+                <!--<h6 class="rs-dashhead-subtitle text-uppercase">Account</h6>-->
+
+                <h6 class="rs-dashhead-subtitle text-uppercase">Gestor de Identidade</h6>
+                <!-- Begin Toolbar toggle button on mobile -->
+                <!--<div class="rs-dashhead-toolbar"-->
+                <!--style="margin-top: -20px;">-->
+
+                <!--<button ng-show="!showbalancedollar" ng-click="changeShowDollar()" class="btn btn-info btn-wide block-on-mobile">-->
+                <!--<span class="fa fa-dollar icon-btn m-r"></span>-->
+                <!--Show in Dollar-->
+                <!--</button>-->
+                <!--<button ng-show="showbalancedollar" ng-click="changeShowDollar()" class="btn btn-info btn-wide block-on-mobile">-->
+                <!--<span class="fa fa-bitcoin icon-btn m-r"></span>-->
+                <!--Show in BTC-->
+                <!--</button>-->
+                <!--</div>&lt;!&ndash; /.toggle-toolbar-btn &ndash;&gt;-->
+                <!-- End Toolbar toggle button on mobile -->
+            </div><!-- /.rs-dashhead-titles -->
+                  <!--<div class="rs-dashhead-toolbar">-->
+                  <!--<button type="button" class="btn btn-success btn-wide rs-btn-icon block-on-mobile">-->
+                  <!--<span class="gcon gcon-upload-to-cloud icon-btn"></span>-->
+                  <!--Upload Item-->
+                  <!--</button>-->
+                  <!--</div>&lt;!&ndash; /.rs-dashhead-toolbar &ndash;&gt;-->
+        </div><!-- /.rs-dashhead-content -->
+              <!-- Begin Breadcrumb -->
+              <!-- End Breadcrumb -->
+    </div><!-- /.rs-dashhead -->
+    <!-- End Dashhead -->
+    <!--<div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-plain panel-rounded" style="padding: 10px;">
+                <form name="user_search" novalidate="">
+                     <select name="usersearchtype" class="form-control input-sm ng-pristine ng-untouched ng-valid" style="width: 100px; display: inline-block;" id="usersearchtype" ng-model="usCTRL.user_search.type">
+                        <option value="username" selected="">Username</option>
+                        <option value="name" selected="">Name</option>
+                        <option value="email">E-mail</option>
+                        <option value="user_wallet">User Wallet</option>
+                        <option value="order_wallet">Order Wallet</option>
+                        <option value="order_id">Order ID</option>
+                    </select>
+                      <input id="user_search" style="width: 201px;float: left;height: 32px;" class="form-control" type="text">
+                    <button style="border-radius: 0;" type="submit" class="btn btn-info">Search
+                    </button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>-->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-plain panel-rounded">
+                <div class="panel-heading borderless">
+                    <h3 class="panel-title"> Identidade List </h3>
+                    <!-- <p class="subtitle text-uppercase m-t ng-binding">0 results</p> -->
+                    <!-- Begin Panel Toolbar -->
+                    <!--<div class="panel-toolbar">-->
+                    <!--<ul class="list-inline m-a-0">-->
+                    <!--<li><i class="rs-refresh-panel icon-toolbar gcon gcon-cycle"></i></li>-->
+                    <!--</ul>-->
+                    <!--</div>&lt;!&ndash; /.panel-toolbar &ndash;&gt;-->
+                    <!-- End Panel Toolbar -->
+                </div><!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="">
+                        <table id="usertable" class="table table-striped" style="width:100%; ">
+                            <thead>
+                           <tr>
+                                <th>Usuario</th>
+                                <th>Nome</th>
+                                <th>Identidade</th>
+                                <th>Status</th>
+                                <th>Data de Envio</th>
+                                <th>Ações</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                
+                            {{#each data }}  
+                            
+                            <tr>
+                                <td>{{this.user_id}}</td>
+                                <td>{{this.type_name}}</td>
+
+                                <td>
+                                    <a target="_blank" href="{{this.fileURL}}" class="btn btn-success ng-hide">Ver Identidade</a>
+                                </td>
+                                <td>{{this.status_name}}</td>
+                                <td >
+                                  {{this.date_sent}}
+                                </td>
+                                <td>
+                                    <a id="{{this._id}}" href="/identity/accept/{{this._id}}" class="btn btn-success">Aceitar</a>
+                                    {{#if this.id_status}}
+                                    <a id="{{this._id}}" href="/identity/reject/{{this._id}}"class="btn btn-danger">Rejeitar</a>{{/if}}
+                                </td>
+
+                            </tr>
+                             {{/each}}
+                            
+                            </tbody>
+                        </table>
+                      
+                   
+                          
+                    </div><!-- /.table-responsive -->
+                </div><!-- .panel-body -->
+            </div>
+        </div>
+
+    </div>
+
+</div></div><!-- /.rs-inner -->
+        </div><!-- /.rs-content -->
+    </article>

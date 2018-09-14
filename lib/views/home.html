@@ -1,0 +1,589 @@
+<!-- BEGIN MAIN CONTENT -->
+    <article  class="rs-content-wrapper">
+        <div class="rs-content">
+            <!-- ngView:  --><div class="rs-inner ng-scope" ng-view=""><style class="ng-scope">
+    .peding_affiliates tr td {
+        vertical-align: middle !important;
+    }
+
+    .alert-black {
+        border-color: #000000 !important;
+    }
+
+    .alert.iconic-alert.alert-black .alert-icon {
+        background: #000000 !important;
+    }
+    
+
+    .progress-bar-black .progress-bar {
+        color: white;
+        background-color: #000000 !important;
+    }
+
+    .progress-bar-success .progress-bar {
+        color: white;
+        background-color: #81c784;
+    !important;
+    }
+
+    .progress-bar-warning .progress-bar {
+        color: white;
+        background-color: #f6bb42;
+    !important;
+    }
+
+    .progress-bar-info .progress-bar {
+        color: white;
+        background-color: #4fc3f7;;
+    !important;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        border-radius: 3px;
+        height: 32px;
+    }
+    .table td:last-child {
+        text-align: right;
+    }
+    .table td:first-child {
+        font-weight: bold;
+    }
+
+
+    .btn-home-more {
+        position: absolute;
+        bottom: -10px;
+        right: 10px;
+    }
+</style>
+
+<div class="container-fluid ng-scope">
+    <div class="row" style="margin-top: 10px">
+        <messages-global><!-- ngRepeat: (k,message) in msgGlobalCTRL.messages --></messages-global>
+    </div>
+
+
+    <!-- Begin Dashhead -->
+    <div class="rs-dashhead m-b-lg">
+        <div class="rs-dashhead-content">
+            <div class="rs-dashhead-titles">
+                <!--<h6 class="rs-dashhead-subtitle text-uppercase">Account</h6>-->
+                <h3 class="rs-dashhead-title m-t">General Business Data</h3>
+                <!-- Begin Toolbar toggle button on mobile -->
+                <div class="rs-dashhead-toolbar" style="margin-top: -20px;">
+
+                    <!--<button ng-show="!showbalancedollar" ng-click="changeShowDollar()" class="btn btn-info btn-wide block-on-mobile">-->
+                        <!--<span class="fa fa-dollar icon-btn m-r"></span>-->
+                        <!--Show in Dollar-->
+                    <!--</button>-->
+                    <!--<button ng-show="showbalancedollar" ng-click="changeShowDollar()" class="btn btn-info btn-wide block-on-mobile">-->
+                        <!--<span class="fa fa-bitcoin icon-btn m-r"></span>-->
+                        <!--Show in BTC-->
+                    <!--</button>-->
+                </div><!-- /.toggle-toolbar-btn -->
+                <!-- End Toolbar toggle button on mobile -->
+            </div><!-- /.rs-dashhead-titles -->
+                  <!--<div class="rs-dashhead-toolbar">-->
+                  <!--<button type="button" class="btn btn-success btn-wide rs-btn-icon block-on-mobile">-->
+                  <!--<span class="gcon gcon-upload-to-cloud icon-btn"></span>-->
+                  <!--Upload Item-->
+                  <!--</button>-->
+                  <!--</div>&lt;!&ndash; /.rs-dashhead-toolbar &ndash;&gt;-->
+        </div><!-- /.rs-dashhead-content -->
+              <!-- Begin Breadcrumb -->
+              <!-- End Breadcrumb -->
+    </div><!-- /.rs-dashhead -->
+    <!-- End Dashhead -->
+
+    <div class="row">
+
+        <div class="col-lg-6">
+            <div class="quick-stat panel panel-rounded bg-grad bg-grad-02 borderless">
+                <div class="panel-heading borderless" style="padding-bottom: 81px !important;">
+                    <p class="subtitle text-lighten text-uppercase m-b-xs" style="    font-size: 18px;">BITCOIN BALANCE</p>
+                    <h3 class="m-a-0 p-a-0 ng-binding" style="font-size: 32px; text-transform: uppercase;">
+                        22.70934169 BTC
+                        <!--<a href="#/bonus/resume"-->
+                           <!--type="button"-->
+                           <!--style="color: black !important;"-->
+                           <!--class="btn btn-default btn-home-more">-->
+                            <!--Details-->
+                        <!--</a>-->
+
+                    </h3>
+                    <!-- /.panel-toolbar -->
+                    <!-- End Panel Toolbar -->
+                </div><!-- /.panel-heading -->
+                <div class="panel-body p-a">
+                    <span class="spark-dash-01"></span>
+                </div><!-- .panel-body -->
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="quick-stat panel panel-rounded bg-grad bg-grad-15 borderless">
+                <div class="panel-heading borderless" style="padding-bottom: 3px !important;">
+                    <p class="subtitle text-lighten text-uppercase m-b-xs" style="    font-size: 18px;">TOTAL USERS</p>
+                    <div class="col-lg-6">
+                        <h3 class="m-a-0 p-a-0" style="    font-size: 21px; text-transform: uppercase;">
+                            <span style="font-size: 15px;">ACTIVE:</span><br>
+                            <strong class="ng-binding">4,241</strong><br>
+                            <br>
+                            <span style="    font-size: 15px;">INACTIVE:</span><br>
+                            <strong class="ng-binding">5,580</strong>
+
+                            <!--<a href="#/network/sponsored"-->
+                            <!--type="button"-->
+                            <!--style="color: black !important;"-->
+                            <!--class="btn btn-default btn-home-more">-->
+                            <!--Details-->
+                            <!--</a>-->
+                        </h3>
+                    </div>
+                    <div class="col-lg-6" style="height: 114px; text-align: center; padding-top: 37px;">
+                        <a href="javascript:;" onclick="userListDownloadCSV()" class="btn btn-info">Download</a>
+                    </div>
+
+                    <!-- /.panel-toolbar -->
+                    <!-- End Panel Toolbar -->
+                </div><!-- /.panel-heading -->
+                <div class="panel-body p-a">
+                    <span class="spark-dash-01"></span>
+                </div><!-- .panel-body -->
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="col-lg-6">
+            <div class="quick-stat panel panel-rounded bg-grad bg-grad-05 borderless">
+                <div class="panel-heading borderless" style="padding-bottom: 81px !important;">
+                    <p class="subtitle text-lighten text-uppercase m-b-xs" style="    font-size: 18px;">TOTAL ORDERS</p>
+                    <h3 class="m-a-0 p-a-0 ng-binding" style="font-size: 32px; text-transform: uppercase;">
+                        399.10757382 BTC
+                        <!--<a href="#/bonus/resume"-->
+                        <!--type="button"-->
+                        <!--style="color: black !important;"-->
+                        <!--class="btn btn-default btn-home-more">-->
+                        <!--Details-->
+                        <!--</a>-->
+
+                    </h3>
+                    <!-- /.panel-toolbar -->
+                    <!-- End Panel Toolbar -->
+                </div><!-- /.panel-heading -->
+                <div class="panel-body p-a">
+                    <span class="spark-dash-01"></span>
+                </div><!-- .panel-body -->
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="quick-stat panel panel-rounded bg-grad bg-grad-08 borderless">
+                <div class="panel-heading borderless" style="padding-bottom: 81px !important;">
+                    <p class="subtitle text-lighten text-uppercase m-b-xs" style="    font-size: 18px;">TOTAL BONUS PAID</p>
+                    <h3 class="m-a-0 p-a-0 ng-binding" style="font-size: 32px; text-transform: uppercase;">
+                        182.74683074 BTC
+                        <!--<a href="#/bonus/resume"-->
+                        <!--type="button"-->
+                        <!--style="color: black !important;"-->
+                        <!--class="btn btn-default btn-home-more">-->
+                        <!--Details-->
+                        <!--</a>-->
+
+                    </h3>
+                    <!-- /.panel-toolbar -->
+                    <!-- End Panel Toolbar -->
+                </div><!-- /.panel-heading -->
+                <div class="panel-body p-a">
+                    <span class="spark-dash-01"></span>
+                </div><!-- .panel-body -->
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="panel panel-plain panel-rounded" style="padding: 10px;"><iframe class="chartjs-hidden-iframe" style="display: block; overflow: hidden; border: 0px none; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" tabindex="-1"></iframe>
+                <canvas id="chart-line-orders-bonus" class="chart-js-no-ratio" style="display: block; width: 1004px; height: 400px;" width="1004" height="400"></canvas>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-plain panel-rounded" style="padding: 10px;">
+                <form name="home_search" ng-submit="homeCTRL.getInfoWithData()" class="ng-pristine ng-valid">
+                    <input style="width: 95px;" class="text-center rs-datepicker date_begin ng-pristine ng-untouched ng-valid" ng-value="homeCTRL.search.date.begin" ng-model="homeCTRL.search.date.begin" data-date-format="yyyy-mm-dd" readonly="readonly" value="2017-10-17" type="text"> to
+                    <input style="width: 95px;" data-date-format="yyyy-mm-dd" readonly="readonly" class="text-center rs-datepicker date_end ng-pristine ng-untouched ng-valid" ng-value="homeCTRL.search.date.end" ng-model="homeCTRL.search.date.end" value="2018-09-10" type="text">
+                    <button type="submit" class="btn btn-info">Search
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <div class="panel panel-plain panel-rounded">            
+                <div class="panel-heading borderless">
+                    <h3 class="panel-title">Revenues</h3>
+                    <p class="subtitle text-uppercase m-t ng-binding" ng-show="homeCTRL.search.date.begin &amp;&amp; homeCTRL.search.date.end">2017-10-17 to 2018-09-10</p>
+                    <!-- Begin Panel Toolbar -->
+                    <!--<div class="panel-toolbar">-->
+                    <!--<ul class="list-inline m-a-0">-->
+                    <!--<li><i class="rs-refresh-panel icon-toolbar gcon gcon-cycle"></i></li>-->
+                    <!--</ul>-->
+                    <!--</div>&lt;!&ndash; /.panel-toolbar &ndash;&gt;-->
+                    <!-- End Panel Toolbar -->
+                </div><!-- /.panel-heading -->
+                <div class="panel-body p-a-0">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-b-t">
+                            <tbody>
+                            <tr>
+                                <td>Orders Total Euro</td>
+                                <td>
+                                    <div class="ng-binding">
+                                        2,784,650.00 Euro<br>
+                                        399.10757382 BTC
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bonus Total:</td>
+                                <td>
+                                    <div class="ng-binding">
+                                        182.74683074 BTC
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Divison:</td>
+                                <td>
+                                    <div>
+                                        <span class="ng-binding">175.98054050 BTC</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tax Send Total:</td>
+                                <td>
+                                    <span class="ng-binding">0.66890478 BTC</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>(Orders - Bonus - Tax Send):</td>
+                                <td>
+                                    <div>
+                                        <span class="ng-binding">39.71129780 BTC</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <hr style="margin-top: 10px; margin-bottom: 10px;">
+                        <table class="table table-striped table-b-t">
+                            <tbody>
+                            <!-- ngRepeat: (key,produto) in homeCTRL.info.produtos --><tr ng-repeat="(key,produto) in homeCTRL.info.produtos" class="ng-scope">
+                                <td class="ng-binding">Free</td>
+                                <td>
+                                    <div class="ng-binding">
+                                            0.00 Euro <br> 
+                                            0.00000000 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,produto) in homeCTRL.info.produtos --><tr ng-repeat="(key,produto) in homeCTRL.info.produtos" class="ng-scope">
+                                <td class="ng-binding">Light</td>
+                                <td>
+                                    <div class="ng-binding">
+                                            17,350.00 Euro <br> 
+                                            2.15961239 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,produto) in homeCTRL.info.produtos --><tr ng-repeat="(key,produto) in homeCTRL.info.produtos" class="ng-scope">
+                                <td class="ng-binding">Beginner</td>
+                                <td>
+                                    <div class="ng-binding">
+                                            92,000.00 Euro <br> 
+                                            13.68506990 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,produto) in homeCTRL.info.produtos --><tr ng-repeat="(key,produto) in homeCTRL.info.produtos" class="ng-scope">
+                                <td class="ng-binding">Starter</td>
+                                <td>
+                                    <div class="ng-binding">
+                                            35,000.00 Euro <br> 
+                                            5.39280400 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,produto) in homeCTRL.info.produtos --><tr ng-repeat="(key,produto) in homeCTRL.info.produtos" class="ng-scope">
+                                <td class="ng-binding">Standard</td>
+                                <td>
+                                    <div class="ng-binding">
+                                            716,000.00 Euro <br> 
+                                            95.57453661 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,produto) in homeCTRL.info.produtos --><tr ng-repeat="(key,produto) in homeCTRL.info.produtos" class="ng-scope">
+                                <td class="ng-binding">Extended</td>
+                                <td>
+                                    <div class="ng-binding">
+                                            347,500.00 Euro <br> 
+                                            49.02780851 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,produto) in homeCTRL.info.produtos --><tr ng-repeat="(key,produto) in homeCTRL.info.produtos" class="ng-scope">
+                                <td class="ng-binding">Business</td>
+                                <td>
+                                    <div class="ng-binding">
+                                            185,000.00 Euro <br> 
+                                            24.63996801 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,produto) in homeCTRL.info.produtos --><tr ng-repeat="(key,produto) in homeCTRL.info.produtos" class="ng-scope">
+                                <td class="ng-binding">Premium</td>
+                                <td>
+                                    <div class="ng-binding">
+                                            170,000.00 Euro <br> 
+                                            24.07072246 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,produto) in homeCTRL.info.produtos --><tr ng-repeat="(key,produto) in homeCTRL.info.produtos" class="ng-scope">
+                                <td class="ng-binding">Ultimate</td>
+                                <td>
+                                    <div class="ng-binding">
+                                            350,000.00 Euro <br> 
+                                            38.74901958 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,produto) in homeCTRL.info.produtos --><tr ng-repeat="(key,produto) in homeCTRL.info.produtos" class="ng-scope">
+                                <td class="ng-binding">Mize Online</td>
+                                <td>
+                                    <div class="ng-binding">
+                                            0.00 Euro <br> 
+                                            0.00000000 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,produto) in homeCTRL.info.produtos --><tr ng-repeat="(key,produto) in homeCTRL.info.produtos" class="ng-scope">
+                                <td class="ng-binding">PowerNode</td>
+                                <td>
+                                    <div class="ng-binding">
+                                            871,800.00 Euro <br> 
+                                            145.80803236 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,produto) in homeCTRL.info.produtos -->
+                            </tbody>
+                        </table>
+                    </div><!-- /.table-responsive -->
+                </div><!-- .panel-body -->
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6">
+                <div class="panel panel-plain panel-rounded">
+                        <div class="panel-heading borderless">
+                                <div class="col-sm-6 col-md-6">
+                                        <h3 class="panel-title">Superpool</h3>
+                                        
+                                        <!-- Begin Panel Toolbar -->
+                                        <!--<div class="panel-toolbar">-->
+                                        <!--<ul class="list-inline m-a-0">-->
+                                        <!--<li><i class="rs-refresh-panel icon-toolbar gcon gcon-cycle"></i></li>-->
+                                        <!--</ul>-->
+                                        <!--</div>&lt;!&ndash; /.panel-toolbar &ndash;&gt;-->
+                                        <!-- End Panel Toolbar -->
+                                </div>
+                            </div><!-- /.panel-heading -->
+                            <div style="clear: both; height: 20px;"></div>
+                            <div class="panel-body p-a-0">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-b-t">
+                                        <tbody>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td>
+                                                <div class="ng-binding">
+                                                     Euro
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>  
+                            </div>
+                <div class="panel panel-plain panel-rounded">
+                <div class="panel-heading borderless">
+                        <div class="col-sm-6 col-md-6">
+                                <h3 class="panel-title">Cotas</h3>
+                                <p class="subtitle text-uppercase m-t ng-binding" ng-show="homeCTRL.search.date.end">2018-09-10</p>
+                                <!-- Begin Panel Toolbar -->
+                                <!--<div class="panel-toolbar">-->
+                                <!--<ul class="list-inline m-a-0">-->
+                                <!--<li><i class="rs-refresh-panel icon-toolbar gcon gcon-cycle"></i></li>-->
+                                <!--</ul>-->
+                                <!--</div>&lt;!&ndash; /.panel-toolbar &ndash;&gt;-->
+                                <!-- End Panel Toolbar -->
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                                <form name="home_search" ng-submit="homeCTRL.getInfoCote()" class="ng-pristine ng-valid">
+                              
+                              <input style="width: 95px;" data-date-format="yyyy-mm-dd" readonly="readonly" class="text-center rs-datepicker date_end_cote ng-pristine ng-untouched ng-valid" ng-value="homeCTRL.search.month" ng-model="homeCTRL.search.month" value="2018-09-10" type="text">
+                              <button type="submit" class="btn btn-info">Search
+                              </button>
+                              </form>
+                        </div>
+                        
+                    </div><!-- /.panel-heading -->
+                    <div style="clear: both; height: 20px;"></div>
+                    <div class="panel-body p-a-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-b-t">
+                                <tbody>
+                                <tr>
+                                    <td>Total Cotas</td>
+                                    <td>
+                                        <div class="ng-binding">
+                                             Euro
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Total pro rata</td>
+                                    <td>
+                                        <div class="ng-binding">
+                                             Euro
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Total sem pro rata</td>
+                                    <td>
+                                        <div class="ng-binding">
+                                             Euro
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>End Date Count</td>
+                                    <td>
+                                        <div class="ng-binding">
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>  
+                    </div>
+                    
+
+            <div class="panel panel-plain panel-rounded">
+                <div class="panel-heading borderless">
+                    <h3 class="panel-title">Bonus</h3>
+                    <p class="subtitle text-uppercase m-t ng-binding" ng-show="homeCTRL.search.date.begin &amp;&amp; homeCTRL.search.date.end">2017-10-17 to 2018-09-10</p>
+                    <!-- Begin Panel Toolbar -->
+                    <!--<div class="panel-toolbar">-->
+                    <!--<ul class="list-inline m-a-0">-->
+                    <!--<li><i class="rs-refresh-panel icon-toolbar gcon gcon-cycle"></i></li>-->
+                    <!--</ul>-->
+                    <!--</div>&lt;!&ndash; /.panel-toolbar &ndash;&gt;-->
+                    <!-- End Panel Toolbar -->
+                </div><!-- /.panel-heading -->
+                <div class="panel-body p-a-0">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-b-t">
+                            <tbody>
+                            <!-- ngRepeat: (key,bonus) in homeCTRL.info.bonus --><tr ng-repeat="(key,bonus) in homeCTRL.info.bonus" class="ng-scope">
+                                <td class="ng-binding">Binary</td>
+                                <td>
+                                    <div class="ng-binding">
+                                        82.11805299 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,bonus) in homeCTRL.info.bonus --><tr ng-repeat="(key,bonus) in homeCTRL.info.bonus" class="ng-scope">
+                                <td class="ng-binding">Direct Indication</td>
+                                <td>
+                                    <div class="ng-binding">
+                                        31.81806372 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,bonus) in homeCTRL.info.bonus --><tr ng-repeat="(key,bonus) in homeCTRL.info.bonus" class="ng-scope">
+                                <td class="ng-binding">Booster</td>
+                                <td>
+                                    <div class="ng-binding">
+                                        5.48794642 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,bonus) in homeCTRL.info.bonus --><tr ng-repeat="(key,bonus) in homeCTRL.info.bonus" class="ng-scope">
+                                <td class="ng-binding">Career path</td>
+                                <td>
+                                    <div class="ng-binding">
+                                        0.10311057 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,bonus) in homeCTRL.info.bonus --><tr ng-repeat="(key,bonus) in homeCTRL.info.bonus" class="ng-scope">
+                                <td class="ng-binding">Matching</td>
+                                <td>
+                                    <div class="ng-binding">
+                                        15.13246718 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,bonus) in homeCTRL.info.bonus --><tr ng-repeat="(key,bonus) in homeCTRL.info.bonus" class="ng-scope">
+                                <td class="ng-binding">Indirect Indication</td>
+                                <td>
+                                    <div class="ng-binding">
+                                        11.19866680 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,bonus) in homeCTRL.info.bonus --><tr ng-repeat="(key,bonus) in homeCTRL.info.bonus" class="ng-scope">
+                                <td class="ng-binding">Super Pool</td>
+                                <td>
+                                    <div class="ng-binding">
+                                        36.88852306 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,bonus) in homeCTRL.info.bonus --><tr ng-repeat="(key,bonus) in homeCTRL.info.bonus" class="ng-scope">
+                                <td class="ng-binding">PowerNode</td>
+                                <td>
+                                    <div class="ng-binding">
+                                        0.00000000 BTC
+                                    </div>
+                                </td>
+                            </tr><!-- end ngRepeat: (key,bonus) in homeCTRL.info.bonus -->
+                            </tbody>
+                        </table>
+                    </div><!-- /.table-responsive -->
+                </div><!-- .panel-body -->
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<script class="ng-scope">
+    function userListDownloadCSV () {
+        window.open(config.api.path + '?data={"data":{ "/admin/download-user-list": {}}}');
+    }
+</script></div><!-- /.rs-inner -->
+        </div><!-- /.rs-content -->
+    </article><!-- /.rs-content-wrapper -->
+    <!-- END MAIN CONTENT -->
+
+
+    <!-- BEGIN FOOTER -->
+    <!--<footer class="rs-footer absolute-footer">-->
+        <!--<span class="text-muted small">&copy; 2017 Roosa Template by <a href="http://gentolab.com">Gento Lab</a></span>-->
+    <!--</footer>-->
+    <!-- END FOOTER -->
+

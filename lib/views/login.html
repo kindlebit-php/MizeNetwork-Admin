@@ -1,0 +1,159 @@
+<html ng-app="mmn" class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths ng-scope" lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Admin</title>
+
+    <!-- Site Icons -->
+    <link rel="apple-touch-icon" href="">
+    <link rel="icon" href="">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <!-- Framework -->
+        <!--  <link rel="stylesheet" href="static/public/style/bootstrap.min.css"> -->
+
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/css/vendor/bootstrap.min.css">
+    <!-- Icon Fonts -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/plugins/stepy/jquery.stepy.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.22.2/sweetalert2.min.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+
+
+    <!-- Main Template CSS -->
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/css/bootstrap.custom.css">
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/css/style.css">
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/css/helper.css">
+
+    <link rel="stylesheet" href="https://jac-admin.mircloud.us/assets/css/your-style.css">
+<style></style></head>
+
+
+<body ng-controller="mmnController as mmnCTRL" class="ng-scope">
+
+<div id="rs-wrapper" style="position: relative; z-index: 1; background-image: none;">
+
+    <!-- BEGIN MAIN CONTENT -->
+    <article ng-class="{'rs-content-wrapper': $authentication.data.logado}">
+        <div class="rs-content">
+            <!-- ngView:  --><div class="rs-inner ng-scope" ng-view=""><style class="ng-scope">
+    form {
+        -webkit-transition: all linear 0.5s;
+        transition: all linear 0.5s;
+    }
+
+    form input.ng-invalid.ng-touched, form.ng-submitted input.ng-invalid {
+        background-color: rgba(245, 87, 83, 0.26);
+    }
+
+    form input.ng-valid {
+        background-color: rgba(118, 245, 83, 0.26);
+    }
+
+    .error {
+        color: red;
+    }
+
+    .progress-bar {
+        box-shadow: none;
+        font-size: 34px;
+        font-weight: 600;
+        line-height: 34px;
+    }
+    /*#rs-wrapper {*/
+        /*background: url(assets/img/bg.jpg) center no-repeat !important;*/
+    /*}*/
+
+    /*.rs-inner {*/
+        /*display: table-cell;*/
+        /*vertical-align: middle;*/
+    /*}*/
+</style>
+
+<div class="login-wrap p-a-md m-x-auto ng-scope" style="position: absolute; left: 50%; top: 50%; margin-left: -180px !important; margin-top: -196.5px !important;">
+    <div class="bg-white b-r-a p-a-lg light-bs">
+        <p class="f-l-15 text-uppercase text-center text-muted">Login Admin</p>
+        <form class="m-b-lg ng-scope ng-dirty ng-valid-parse ng-valid ng-valid-required" id="rs-validation-login-page" method="post" name="formLogin">
+            <font color="red" >{{{err}}}</font>
+
+            <div class="form-group has-feedback feedback-left">
+                <label class="control-label">Username</label>
+                <input class="form-control ng-untouched ng-dirty ng-valid-parse ng-valid ng-valid-required" placeholder="Username" id="username" name="username" ng-model="loginCTRL.user.username" required="" type="text">
+                <span class="gcon gcon-user f-s-xs form-control-feedback" aria-hidden="true"></span>
+            </div><!-- /.form-group -->
+            <label ng-show="loginCTRL.campoValido('username','required')" class="error hide" for="username">This field must be filled.</label>
+            <div class="form-group has-feedback feedback-left">
+                <label class="control-label">Password</label>
+                <input class="form-control ng-untouched ng-dirty ng-valid-parse ng-valid ng-valid-required" placeholder="Password" id="password" name="password" ng-model="loginCTRL.user.password" required="" type="password">
+                <span class="gcon gcon-lock f-s-xs form-control-feedback" aria-hidden="true"></span>
+            </div><!-- /.form-group -->
+            <label ng-show="loginCTRL.campoValido('password','required')" class="error hide" for="password">This field must be filled.</label>
+            <!--<div class="form-group">-->
+                <!--<div class="checkbox checkbox-custom text-muted">-->
+                    <!--<label>-->
+                        <!--<input type="checkbox" value="">-->
+                        <!--<span class="checker"></span>-->
+                        <!--Remember me, please c:-->
+                    <!--</label>-->
+                <!--</div>-->
+            <!--</div>&lt;!&ndash; /.form-group &ndash;&gt;-->
+            <button class="btn btn-success btn-block text-uppercase" type="submit">Log me in</button>
+        </form>
+        <p class="text-center text-muted small m-a-0">
+            <!--<a href="#/recoverpassword">Forgot your Password</a><br>-->
+            <!--Don't have an account? <a href="#/register">Sign up here</a>-->
+        </p>
+    </div><!-- /.bg-white -->
+</div><!-- /.login-wrap -->
+
+
+
+<script class="ng-scope">
+    $(document).ready(function () {
+        $(function() {
+            $('.login-wrap').css('cssText','' +
+                    'position: absolute;left:50%;top:50%;' +
+                'margin-left: ' + (-$('.login-wrap').width()/2) + 'px !important;' +
+                'margin-top: ' + (-$('.login-wrap').height()/2) + 'px !important;'
+            );
+        });
+    });
+</script>
+</div><!-- /.rs-inner -->
+        </div><!-- /.rs-content -->
+    </article><!-- /.rs-content-wrapper -->
+    <!-- END MAIN CONTENT -->
+
+
+    <!-- BEGIN FOOTER -->
+    <!--<footer class="rs-footer absolute-footer">-->
+        <!--<span class="text-muted small">&copy; 2017 Roosa Template by <a href="http://gentolab.com">Gento Lab</a></span>-->
+    <!--</footer>-->
+    <!-- END FOOTER -->
+
+
+<div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 100%; width: 100%; z-index: -999998; position: absolute;"><div class="backstretch-item" style="position: absolute; margin: 0px; padding: 0px; border: medium none; width: 100%; height: 100%; z-index: -999999;"><img style="position: absolute; margin: 0px; padding: 0px; border: medium none; width: 1366px; height: 853.75px; max-width: none; left: 0px; top: -248.375px; right: auto; bottom: auto;" alt="" src="https://jac-admin.mircloud.us/assets/img/bg.jpg"></div></div></div><!-- /#rs-wrapper -->
+
+<!-- Screen overlay is required -->
+<div id="rs-screen-overlay"></div>
+
+
+<script src="https://jac-admin.mircloud.us/assets/js/vendor/jquery.min.js"></script>
+<script src="https://jac-admin.mircloud.us/assets/js/vendor/bootstrap.min.js"></script>
+<script src="https://jac-admin.mircloud.us/assets/js/vendor/raphael.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.22.2/sweetalert2.min.js"></script>
+<script src="https://jac-admin.mircloud.us/assets/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+<script src="https://jac-admin.mircloud.us/assets/plugins/ismobile/isMobile.min.js"></script>
+
+<script src="https://jac-admin.mircloud.us/assets/plugins/prettify/prettify.min.js"></script>
+
+<script src="https://jac-admin.mircloud.us/assets/plugins/stepy/jquery.stepy.min.js"></script>
+<script src="https://jac-admin.mircloud.us/assets/js/vendor/jquery.backstretch.min.js"></script>
+
+<div class="back-to-top bg-dark b-r-a"><span class="glyphicon glyphicon-chevron-up"></span></div></body></html>

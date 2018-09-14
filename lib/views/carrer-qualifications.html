@@ -1,0 +1,119 @@
+<article class="rs-content-wrapper">
+        <div class="rs-content">
+            <!-- ngView:  --><div class="rs-inner ng-scope" ng-view=""><style class="ng-scope">
+
+    .filters a.active {
+        color: #71b6f9 !important;
+    }
+
+    #tech-companies-1 td {
+        line-height: 34px;
+    }
+  #DataTableable_filter label {
+    background: #4fc3f7;
+    color: #fff;
+    padding-left: 6px;
+    font-size: 13px;
+}
+    input[type="search"] {
+    border: 1px solid #e1e8ed;
+    padding: 3px;color: #333;
+    }
+
+    /*@media (max-width: 768px) {*/
+        /*.order-list tr th:nth-child(1), .order-list tr td:nth-child(1) {*/
+            /*display: none;*/
+        /*}*/
+        /*.order-list tr th:nth-child(4), .order-list tr td:nth-child(4) {*/
+            /*display: none;*/
+        /*}*/
+    /*}*/
+</style>
+
+
+
+<!-- Begin Dashhead -->
+<div class="rs-dashhead m-b-lg ng-scope">
+    <div class="rs-dashhead-content">
+        <div class="rs-dashhead-titles">
+            <h3 class="rs-dashhead-title m-t">Relatório de Entrada</h3>
+            <!-- Begin Toolbar toggle button on mobile -->
+            <div class="rs-dashhead-toolbar" style="margin-top: -20px;">
+
+            </div>
+            <!-- End Toolbar toggle button on mobile -->
+        </div><!-- /.rs-dashhead-titles -->
+              <!--<div class="rs-dashhead-toolbar">-->
+              <!--<button type="button" class="btn btn-success btn-wide rs-btn-icon block-on-mobile">-->
+              <!--<span class="gcon gcon-upload-to-cloud icon-btn"></span>-->
+              <!--Upload Item-->
+              <!--</button>-->
+              <!--</div>&lt;!&ndash; /.rs-dashhead-toolbar &ndash;&gt;-->
+    </div><!-- /.rs-dashhead-content -->
+          <!-- Begin Breadcrumb -->
+    <ol class="breadcrumb breadcrumb-arrow">
+        <li class="active">Relatório de Qualificações</li>
+    </ol>
+          <!-- End Breadcrumb -->
+</div><!-- /.rs-dashhead -->
+<!-- End Dashhead -->
+<div class="container-fluid ng-scope">
+    <div class="row">
+        <div class="panel panel-plain" style="    padding: 15px;">
+            <div class="panel-body p-t-0 p-b-0" style="padding: 0px;">
+                <div class="col-md-12">
+                    <div class="">
+                        <table id="DataTableable" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Usuario</th>
+                                <th>Nome Completo</th>
+                                <th>Country Name</th>
+                                <th>Qualificação Name</th>
+                                <th>Qualificação Bonus</th>
+                                <th>Data de qualificação</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                             {{#each data }}  
+                             
+                                <tr class="ng-scope">
+                                <td class="ng-binding">{{this._id}}</td>
+                                <td class="ng-binding">{{this.username}}</td>
+                                <td class="ng-binding">{{this.fullname}}</td>
+
+                                <td class="ng-binding">
+                                   {{this.country_name}}
+                                </td>
+                                <td class="ng-binding">
+                                    {{this.qualification_name}}
+                                </td>
+                                <td class="ng-binding">
+                                     {{this.qualification_bonus}}
+                                </td>
+                                <td class="ng-binding">
+                                   {{this.date_qualification}}
+                                </td>
+
+                            </tr>  
+                            {{/each}}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+</div><!-- /.rs-inner -->
+        </div><!-- /.rs-content -->
+    </article>
+
+ 

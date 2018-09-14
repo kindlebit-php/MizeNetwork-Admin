@@ -1,0 +1,198 @@
+<article ng-class="{'rs-content-wrapper': $authentication.data.logado}" class="rs-content-wrapper">
+        <div class="rs-content">
+            <!-- ngView:  --><div class="rs-inner ng-scope" ng-view=""><style class="ng-scope">
+    form {
+        -webkit-transition: all linear 0.5s;
+        transition: all linear 0.5s;
+    }
+
+    form input.ng-invalid.ng-touched, form.ng-submitted input.ng-invalid {
+        background-color: rgba(245, 87, 83, 0.26);
+    }
+
+    form input.ng-valid {
+        background-color: rgba(118, 245, 83, 0.26);
+    }
+
+    .error {
+        color: red;
+    }
+
+    hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-top-color: #ffa019;
+    }
+</style>
+
+<!-- Begin Dashhead -->
+<div class="rs-dashhead m-b-lg ng-scope">
+    <div class="rs-dashhead-content">
+        <div class="rs-dashhead-titles">
+            <!--<h6 class="rs-dashhead-subtitle text-uppercase">Account</h6>-->
+            <h6 class="rs-dashhead-subtitle text-uppercase">User</h6>
+            <h3 class="rs-dashhead-title m-t ng-binding">Edit {{{data.username}}}
+</h3>
+            <!-- Begin Toolbar toggle button on mobile -->
+            <div class="rs-dashhead-toolbar" style="margin-top: -20px;">
+                <!--<button-->
+                        <!--onclick="$('#modal-recover-security-password').modal('show')"-->
+                   <!--class="visible-md visible-lg btn btn-warning btn-wide block-on-mobile">-->
+                    <!--<span class="glyphicon glyphicon-list icon-btn m-r"></span>-->
+                    <!--Recovery Security Password-->
+                <!--</button>-->
+            </div><!-- /.toggle-toolbar-btn -->
+            <!-- End Toolbar toggle button on mobile -->
+        </div><!-- /.rs-dashhead-titles -->
+              <!--<div class="rs-dashhead-toolbar">-->
+              <!--<button type="button" class="btn btn-success btn-wide rs-btn-icon block-on-mobile">-->
+              <!--<span class="gcon gcon-upload-to-cloud icon-btn"></span>-->
+              <!--Upload Item-->
+              <!--</button>-->
+              <!--</div>&lt;!&ndash; /.rs-dashhead-toolbar &ndash;&gt;-->
+    </div><!-- /.rs-dashhead-content -->
+          <!-- Begin Breadcrumb -->
+          <!-- End Breadcrumb -->
+</div><!-- /.rs-dashhead -->
+<!-- End Dashhead -->
+
+
+
+<div class="container-fluid ng-scope">
+    <font>{{{err}}}</font>
+
+
+    <!--<button-->
+            <!--data-target="#modal-recover-security-password"-->
+            <!--style="width: 100%; margin-bottom: 10px"-->
+            <!--class="btn btn-warning btn-wide block-on-mobile visible-xs">-->
+        <!--<span class="glyphicon glyphicon-list icon-btn m-r"></span>-->
+        <!--Recovery Security Password-->
+    <!--</button>-->
+
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-plain panel-rounded">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" href="javascript:;" aria-expanded="true" aria-controls="collapseOne" class="">
+                        Personal data
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true" style="">
+                <div class="panel-body">
+                    <form novalidate="" method="post" name="personal_data" class="ng-pristine ng-valid ng-valid-email">
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="sponsor">Sponsor Username</label>
+                           			<input class="form-control" id="sponsor" readonly="" value="{{{data.sponsor}}}" type="text">
+                                </div>
+                            </div><!-- /.col-md-6 -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" data-character-set="a-z" for="username">Username</label>
+                                    <input class="form-control" readonly="" id="username" name="username"  type="text" value="{{{data.username}}}">
+                                    <label class="error hide" for="email">This field must be filled.</label>
+                                    <!--<p class="help-block">Think about very unique and easy to remember, please no [<em>space</em>]</p>-->
+                                </div><!-- /.form-group -->
+                            </div><!-- /.col-md-6 -->
+                        </div><!-- /.row -->
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">First Name</label>
+                                    <input required="" class="form-control" value="{{{data.first_name}}}" name="firstname" id="firstname" type="text">
+                                    <label ng-show="campoValido('firstname','required','personal_data')" class="error hide" for="email">This field must be filled.</label>
+                                </div><!-- /.form-group -->
+                            </div><!-- /.col-md-6 -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Last Name</label>
+                                    <input class="form-control ng-pristine ng-untouched ng-valid" name="lastname" id="lastname" value="{{{data.last_name}}}" type="text">
+                                    <label ng-show="campoValido('lastname','required','personal_data')" class="error hide" for="email">This field must be filled.</label>
+                                </div><!-- /.form-group -->
+                            </div><!-- /.col-md-6 -->
+                        </div><!-- /.row -->
+                        <div class="form-group">
+                            <label class="control-label" for="email">Email Address</label>
+                            <input  required="" class="form-control ng-pristine ng-untouched ng-valid ng-valid-email" id="email" name="email" value="{{{data.emailID}}}" type="email">
+                            <label ng-show="campoValido('email','required','personal_data')" class="error hide" for="email">This field must be filled.</label>
+                            <label ng-show="campoValido('email','email','personal_data')" class="error hide" for="email">E-mail is invalid.</label>
+                        </div><!-- /.form-group -->
+
+
+                        <button class="btn btn-success btn-wide stepy-finish" type="submit">Save
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel panel-plain panel-rounded">
+            <div class="panel-heading" role="tab" id="heading4">
+                <h4 class="panel-title">
+                    <a class="collapsed" href="#collapse4" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse4"  aria-expanded="false" aria-controls="collapseThree">
+                        Two-Step Authentication
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4" aria-expanded="false" style="height: 0px;">
+                <div class="panel-body">
+
+                    <form name="reset_2fa" novalidate="" class="ng-pristine ng-valid">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-striped table-b-t">
+
+                                    <tbody>
+                                    <tr>
+                                        <td><strong>Status:</strong></td>
+                                        <td ng-show="UDCTRL.userInfo" class="text-right">
+                                        	{{#if active}}
+											  <span class="label label-success ng-hide" ng-show="UDCTRL.userInfo['2fa_actived']">Active</span>
+											{{else}}
+											   <span class="label label-warning" ng-show="!UDCTRL.userInfo['2fa_actived']">Inactive</span>
+											{{/if}}
+                                            
+                                           
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <button class="btn btn-success btn-wide stepy-finish" style="margin-top: 10px" type="submit">Reset
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- /.container-fluid -->
+
+</div><!-- /.rs-inner -->
+        </div><!-- /.rs-content -->
+    </article>
