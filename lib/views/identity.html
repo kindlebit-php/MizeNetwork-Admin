@@ -67,7 +67,7 @@
 
 <div class="container-fluid ng-scope">
     <div class="row" style="margin-top: 10px">
-        <messages-global><!-- ngRepeat: (k,message) in msgGlobalCTRL.messages --></messages-global>
+       {{{err}}}
     </div>
 
 
@@ -157,7 +157,7 @@
                             {{#each data }}  
                             
                             <tr>
-                                <td>{{this.user_id}}</td>
+                                <td>{{this.user_id.username}}</td>
                                 <td>{{this.type_name}}</td>
 
                                 <td>
@@ -168,9 +168,19 @@
                                   {{this.date_sent}}
                                 </td>
                                 <td>
-                                    <a id="{{this._id}}" href="/identity/accept/{{this._id}}" class="btn btn-success">Aceitar</a>
-                                    {{#if this.id_status}}
-                                    <a id="{{this._id}}" href="/identity/reject/{{this._id}}"class="btn btn-danger">Rejeitar</a>{{/if}}
+                                    <form method="post">
+                                        <input type="hidden" name="user_id" value="{{this._id}}">
+                                        <input type="hidden" name="accept" value="1">
+                                        <button onclick="return confirm('Are you sure to accept the user document')" class="btn btn-success btn-wide stepy-finish" style="margin-top: 10px" type="submit">Aceitar </button>
+                                    </form>
+                                     {{#compare this.id_status 4 operator="!="}}
+                                    <form method="post">
+                                        <input type="hidden" name="user_id" value="{{this._id}}">
+                                        <input type="hidden" name="reject" value="1">
+                                        <button onclick="return confirm('Are you sure to rejeitar the user document')" class="btn btn-danger btn-wide stepy-finish" style="margin-top: 10px" type="submit">Rejeitar</button>
+                                    </form>
+                                    {{/compare}}
+                                    
                                 </td>
 
                             </tr>

@@ -6,11 +6,15 @@ const Path = require('path');
 const Settings = require('./settings');
 const Routes = require('./lib/routes');
 const Models = require('./lib/models/');
+
 var Bcrypt = require('bcrypt');
 //var Basic = require('hapi-auth-basic');//const server = new Hapi.Server();
 console.log(Settings.port);
 var hapi_auth_cookie = require('hapi-auth-cookie');
 const Handlebars = require('handlebars');
+const Helper = require('./lib/helper/helper');/**(math,compate,equal)**/
+
+var helpers = require('handlebars-helpers');
 //server.connection({ port: Settings.port });
 const Vision = require('vision');
 const Inert = require('inert');

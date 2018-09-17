@@ -57,6 +57,7 @@
           <!-- End Breadcrumb -->
 </div><!-- /.rs-dashhead -->
 <!-- End Dashhead -->
+
 <div class="container-fluid ng-scope">
     <div class="row">
         <div class="panel panel-plain" style="    padding: 15px;">
@@ -79,7 +80,7 @@
                              {{#each data }}  
                              
                                 <tr class="ng-scope">
-                                <td class="ng-binding">{{this._id}}</td>
+                                <td class="ng-binding">{{math @index '+' 1}}</td>
                                 <td class="ng-binding">{{this.username}}</td>
                                 <td class="ng-binding">{{this.fullname}}</td>
 
@@ -96,7 +97,9 @@
                                    {{this.date_qualification}}
                                 </td>
 
-                            </tr>  
+                            </tr> 
+                             {{else}}
+                             <tr> <p class="empty">No content</p></tr>
                             {{/each}}
                             </tbody>
                         </table>

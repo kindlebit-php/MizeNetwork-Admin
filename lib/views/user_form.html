@@ -138,7 +138,7 @@
         <div class="panel panel-plain panel-rounded">
             <div class="panel-heading" role="tab" id="heading4">
                 <h4 class="panel-title">
-                    <a class="collapsed" href="#collapse4" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse4"  aria-expanded="false" aria-controls="collapseThree">
+                    <a class="collapsed" href="javascript:void(0)" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse4"  aria-expanded="false" aria-controls="collapseThree">
                         Two-Step Authentication
                     </a>
                 </h4>
@@ -146,7 +146,7 @@
             <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4" aria-expanded="false" style="height: 0px;">
                 <div class="panel-body">
 
-                    <form name="reset_2fa" novalidate="" class="ng-pristine ng-valid">
+                    <form name="reset_2fa" method="post" class="ng-pristine ng-valid">
 
                         <div class="row">
                             <div class="col-md-12">
@@ -156,10 +156,10 @@
                                     <tr>
                                         <td><strong>Status:</strong></td>
                                         <td ng-show="UDCTRL.userInfo" class="text-right">
-                                        	{{#if active}}
+                                        	{{#if data.active}}
 											  <span class="label label-success ng-hide" ng-show="UDCTRL.userInfo['2fa_actived']">Active</span>
 											{{else}}
-											   <span class="label label-warning" ng-show="!UDCTRL.userInfo['2fa_actived']">Inactive</span>
+											   <span class="label label-warning" >Inactive</span>
 											{{/if}}
                                             
                                            
@@ -170,15 +170,15 @@
                             </div>
                         </div>
 
-
-                        <button class="btn btn-success btn-wide stepy-finish" style="margin-top: 10px" type="submit">Reset
+                       <input name="active" value="0" type="hidden">
+                        <button onclick="return confirm('Are you sure you want to reset the Two-Step Authentication for user {{{data.first_name}}}')" class="btn btn-success btn-wide stepy-finish" style="margin-top: 10px" type="submit">Reset
                         </button>
+                        
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
 
 
 
