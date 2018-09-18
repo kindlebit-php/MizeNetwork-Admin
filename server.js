@@ -20,7 +20,7 @@ const Vision = require('vision');
 const Inert = require('inert');
 
 const Pug = require('pug');
-const server = new Hapi.Server({ port: 3000, host: 'localhost' });
+const server = new Hapi.Server({ port: 3000 });
 
 
 const init = async () => {
