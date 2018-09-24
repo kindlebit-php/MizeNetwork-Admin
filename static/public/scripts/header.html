@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="mmn" class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths ng-scope" lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>{{title}}</title>
+    <title>Admin</title>
 
     <!-- Site Icons -->
     <link rel="apple-touch-icon" href="">
@@ -16,22 +16,25 @@
    <!-- Site Icons -->
     <link rel="apple-touch-icon" href="">
     <link rel="icon" href="">
- 
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
     <!-- Framework -->
-        <!--  <link rel="stylesheet" href="static/public/style/bootstrap.min.css"> -->
-
     <link rel="stylesheet" href="http://13.59.165.203/MizeNetwork-Admin/static/public/styles/bootstrap.min.css">
+
     <!-- Icon Fonts -->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://13.59.165.203/MizeNetwork-Admin/static/public/styles/entypo.min.css">
+    <link rel="stylesheet" href="http://13.59.165.203/MizeNetwork-Admin/static/public/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="http://13.59.165.203/MizeNetwork-Admin/static/public/styles/flag-icon.min.css">
+    <link rel="stylesheet" href="http://13.59.165.203/MizeNetwork-Admin/static/public/styles/material-icon.min.css">
+    <link rel="stylesheet" href="http://13.59.165.203/MizeNetwork-Admin/static/public/styles/weather-icons.min.css">
     <link rel="stylesheet" href="http://13.59.165.203/MizeNetwork-Admin/static/public/styles/jquery.stepy.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.22.2/sweetalert2.min.css">
 
     <!-- Plugins -->
     <!--<link rel="stylesheet" href="assets/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css">-->
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <!--<link rel="stylesheet" href="assets/plugins/datatable/datatables.min.css">-->
     <link rel="stylesheet" href="http://13.59.165.203/MizeNetwork-Admin/static/public/styles/datepicker.min.css">
     <!--<link rel="stylesheet" href="assets/plugins/medium-editor/css/medium-editor.min.css">-->
     <!--<link rel="stylesheet" href="assets/plugins/medium-editor/css/themes/bootstrap.min.css">-->
@@ -52,6 +55,7 @@
 
     <link rel="stylesheet" href="http://13.59.165.203/MizeNetwork-Admin/static/public/styles/your-style.css">
 </head>
+
 
 <body ng-controller="mmnController as mmnCTRL" class="ng-scope">
 
@@ -136,7 +140,7 @@
                             <!-- Dropdown -->
                             <ul class="dropdown-menu lg-dropdown">
                                
-                                <li class="menu-icon"><a href="/logout"><span class="gcon gcon-log-out rs-dropdown-icon"></span>Log Out</a></li>
+                                <li class="menu-icon"><a href="javascript:void(0);" ng-click="mmnCTRL.logout()"><span class="gcon gcon-log-out rs-dropdown-icon"></span>Log Out</a></li>
                             </ul>
                             <!-- End dropdown -->
                         </li>
@@ -149,3 +153,111 @@
         </div><!-- /.container-fluid -->
     </nav>
     <!-- END MAIN HEADER NAV -->
+
+
+    <!-- BEGIN SIDEBAR NAV -->
+    <aside class="rs-sidebar logado" style="" ng-show="$authentication.data.logado">
+
+        <!-- Sidebar menu -->
+        <ul class="rs-sidebar-nav default-sidebar-nav">
+
+            <li class="menu-header">Main menu</li>
+
+          <li ng-if="$authentication.data.user.username != 'antunes'" ng-class="{active: $location.path() == '/home'}" class="ng-scope active">
+                <a href="#/home">
+                    <span class="fa fa-home rs-icon-menu"></span>General data
+                </a>
+            </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
+            <!-- ngIf: $authentication.data.user.username != 'antunes' --><li ng-if="$authentication.data.user.username != 'antunes'" ng-class="{active: $location.path().indexOf('/user') &gt;= 0}" class="ng-scope">
+                <a href="#/user/search">
+                    <span class="fa fa-user-circle-o rs-icon-menu"></span>User
+                </a>
+            </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
+
+            <!-- ngIf: $authentication.data.user.username != 'antunes' --><li ng-if="$authentication.data.user.username != 'antunes'" ng-class="{active: $location.path().indexOf('/relatorio-entradas') &gt;= 0}" class="ng-scope">
+                <a href="#/relatorio-entradas/list">
+                    <span class="fa fa-area-chart rs-icon-menu"></span>Relatorio de Entradas
+                </a>
+            </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
+
+            <!-- ngIf: $authentication.data.user.username != 'antunes' --><li ng-if="$authentication.data.user.username != 'antunes'" ng-class="{active: $location.path().indexOf('/relatorio-pg-parceiros') &gt;= 0}" class="ng-scope">
+                <a href="#/relatorio-pg-parceiros/list">
+                    <span class="fa fa-line-chart rs-icon-menu"></span>Relatorio Pagamento Parceiros
+                </a>
+            </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
+
+            <!-- ngIf: $authentication.data.user.username != 'antunes' --><li ng-if="$authentication.data.user.username != 'antunes'" ng-class="{active: $location.path().indexOf('/carrer-qualifications') &gt;= 0}" class="ng-scope">
+                <a href="#/carrer-qualifications/list">
+                    <span class="fa fa-line-chart rs-icon-menu"></span>Relatorio Qualificações
+                </a>
+            </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
+
+            <!-- ngIf: $authentication.data.user.username != 'antunes' --><li ng-if="$authentication.data.user.username != 'antunes'" ng-class="{active: $location.path().indexOf('/passports') &gt;= 0}" class="ng-scope">
+                <a href="#/passports/list">
+                    <span class="fa fa-address-card-o rs-icon-menu"></span>Gestor de Identidades
+                </a>
+            </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
+
+            <!-- ngIf: $authentication.data.user.username != 'antunes' --><li ng-if="$authentication.data.user.username != 'antunes'" ng-class="{active: $location.path().indexOf('/mensagem') &gt;= 0}" class="ng-scope">
+                <a href="#/mensagem/list">
+                    <span class="fa fa-bullhorn rs-icon-menu"></span>Msg Boas Vindas
+                </a>
+            </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
+
+            <li ng-class="{active: $location.path().indexOf('/courses') &gt;= 0}">
+                <a href="#">
+                    <span class="fa fa-file-video-o rs-icon-menu"></span>Cursos
+                </a>
+                <ul>
+                        <li ng-class="/courses/list">
+                            <a href="#/courses/list">
+                                Todos os Cursos
+                            </a>
+                        </li>
+                        <li ng-class="/course/add">
+                            <a href="#/course/add">
+                                Add. Cursos
+                            </a>
+                        </li>
+                        <li ng-class="/courseitem/list">
+                            <a href="#/courseitem/list">
+                                Listar Tópicos
+                            </a>
+                        </li>
+                        <li ng-class="/courseitem/add">
+                            <a href="#/courseitem/add">
+                                Add. Tópicos
+                            </a>
+                        </li>
+
+                        <li ng-class="/coursesubitem/list">
+                            <a href="#/coursesubitem/list">
+                                Listar Sub-Tópicos
+                            </a>
+                        </li>
+                        <li ng-class="/coursesubitem/add">
+                            <a href="#/coursesubitem/add">
+                                Add. Sub-Tópicos
+                            </a>
+                        </li>
+                </ul>
+            </li>
+            <!-- ngIf: $authentication.data.user.username != 'antunes' --><li ng-if="$authentication.data.user.username != 'antunes'" ng-class="/historychangemail" class="ng-scope">
+                <a href="#/historychangemail">
+                    <span class="fa fa-bullhorn rs-icon-menu"></span>History Change Email
+                </a>
+            </li>
+        </ul>
+
+        <!-- End sidebar menu -->
+
+        <!-- Custom Content -->
+
+        <!-- End Custom content -->
+
+        <!-- Custom Content -->
+
+        <!-- End Custom content -->
+
+    </aside><!-- /.rs-sidebar -->
+    <!-- END SIDEBAR NAV -->
