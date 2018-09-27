@@ -19,6 +19,7 @@
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
     "dotenv": "^6.0.0",
+    "group-array": "^0.3.3",
     "handlebars": "^4.0.12",
     "handlebars-helpers": "^0.10.0",
     "hapi": "^17.5.4",
