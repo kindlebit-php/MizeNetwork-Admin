@@ -90,6 +90,7 @@
                                 <div class="form-group">
                                     <label class="control-label" for="sponsor">Sponsor Username</label>
                            			<input class="form-control" id="sponsor" readonly="" value="{{{data.sponsor}}}" type="text">
+                                     <input readonly="" id="user_id" name="user_id"  type="hidden" value="{{{data.id}}}">
                                 </div>
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
@@ -107,27 +108,27 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">First Name</label>
-                                    <input required="" class="form-control" value="{{{data.first_name}}}" name="firstname" id="firstname" type="text">
-                                    <label ng-show="campoValido('firstname','required','personal_data')" class="error hide" for="email">This field must be filled.</label>
+                                    <input required class="form-control" value="{{{data.first_name}}}" name="firstname" id="firstname" type="text">
+                                    <label ng-show="campoValido('firstname','required','personal_data')" class="firstnameerr error hide" for="email">This field must be filled.</label>
                                 </div><!-- /.form-group -->
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Last Name</label>
-                                    <input class="form-control ng-pristine ng-untouched ng-valid" name="lastname" id="lastname" value="{{{data.last_name}}}" type="text">
-                                    <label ng-show="campoValido('lastname','required','personal_data')" class="error hide" for="email">This field must be filled.</label>
+                                    <input class="form-control" name="lastname" id="lastname" value="{{{data.last_name}}}" type="text">
+                                    <label ng-show="campoValido('lastname','required','personal_data')" class="lastnameerr error hide" for="email">This field must be filled.</label>
                                 </div><!-- /.form-group -->
                             </div><!-- /.col-md-6 -->
                         </div><!-- /.row -->
                         <div class="form-group">
                             <label class="control-label" for="email">Email Address</label>
-                            <input  required="" class="form-control ng-pristine ng-untouched ng-valid ng-valid-email" id="email" name="email" value="{{{data.email}}}" type="email">
-                            <label ng-show="campoValido('email','required','personal_data')" class="error hide" for="email">This field must be filled.</label>
-                            <label ng-show="campoValido('email','email','personal_data')" class="error hide" for="email">E-mail is invalid.</label>
+                            <input  required class="form-control " id="email" name="email" value="{{{data.email}}}" type="email">
+                            <label ng-show="campoValido('email','required','personal_data')" class="emailerr error hide" for="email">This field must be filled.</label>
+                            <label ng-show="campoValido('email','email','personal_data')" class="emailtypeerr error hide" for="email">E-mail is invalid.</label>
                         </div><!-- /.form-group -->
 
 
-                        <button class="btn btn-success btn-wide stepy-finish" type="submit">Save
+                        <button onclick="return validate();" class="btn btn-success btn-wide stepy-finish" type="submit">Save
                         </button>
                     </form>
                 </div>
@@ -147,7 +148,7 @@
                 <div class="panel-body">
 
                     <form name="reset_2fa" method="post" class="ng-pristine ng-valid">
-
+                        <input readonly="" id="user_id" name="user_id"  type="hidden" value="{{{data.id}}}">
                         <div class="row">
                             <div class="col-md-12">
                                 <table class="table table-striped table-b-t">
@@ -156,11 +157,11 @@
                                     <tr>
                                         <td><strong>Status:</strong></td>
                                         <td ng-show="UDCTRL.userInfo" class="text-right">
-                                        	{{#if data.active}}
+                                        	{{#equal data.active "1" }}
 											  <span class="label label-success ng-hide" ng-show="UDCTRL.userInfo['2fa_actived']">Active</span>
 											{{else}}
 											   <span class="label label-warning" >Inactive</span>
-											{{/if}}
+											{{/equal}}
                                             
                                            
                                         </td>
@@ -196,3 +197,42 @@
 </div><!-- /.rs-inner -->
         </div><!-- /.rs-content -->
     </article>
+ <script type="text/javascript">
+     function validate(){
+        var firstname = $("#firstname").val();
+        var lastname = $("#lastname").val();
+        var email = $("#email").val();
+        error=0;
+        if(firstname==''){
+            $(".firstnameerr").removeClass('hide');
+             error=1;
+        }else{
+            $(".firstnameerr").addClass('hide');
+        }
+         if(lastname==''){
+            $(".lastnameerr").removeClass('hide');
+            error=1;
+        }else{
+            $(".lastnameerr").addClass('hide');
+        }
+         if(email==''){
+            $(".emailerr").removeClass('hide');
+            error=1;
+        }else{
+            $(".emailerr").addClass('hide');
+        }
+         if (validateEmail(email)) {
+            $(".emailtypeerr").addClass('hide');
+          } else {
+            $(".emailtypeerr").removeClass('hide');
+            error=1;
+          }
+        if(error==1){
+            return false;
+        }
+     }
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+ </script>   

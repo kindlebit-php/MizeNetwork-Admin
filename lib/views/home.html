@@ -103,8 +103,8 @@
                 <div class="panel-heading borderless" style="padding-bottom: 81px !important;">
                     <p class="subtitle text-lighten text-uppercase m-b-xs" style="    font-size: 18px;">BITCOIN BALANCE</p>
                     <h3 class="m-a-0 p-a-0 ng-binding" style="font-size: 32px; text-transform: uppercase;">
-                        22.70934169 BTC
-                        <!--<a href="#/bonus/resume"-->
+                        {{data.bitcoin_balance}}  BTC
+                        <!--22.70934169 <a href="#/bonus/resume"-->
                            <!--type="button"-->
                            <!--style="color: black !important;"-->
                            <!--class="btn btn-default btn-home-more">-->
@@ -128,10 +128,10 @@
                     <div class="col-lg-6">
                         <h3 class="m-a-0 p-a-0" style="    font-size: 21px; text-transform: uppercase;">
                             <span style="font-size: 15px;">ACTIVE:</span><br>
-                            <strong class="ng-binding">4,241</strong><br>
+                            <strong class="ng-binding">{{data.active}}</strong><br>
                             <br>
                             <span style="    font-size: 15px;">INACTIVE:</span><br>
-                            <strong class="ng-binding">5,580</strong>
+                            <strong class="ng-binding">{{data.inactive}}</strong>
 
                             <!--<a href="#/network/sponsored"-->
                             <!--type="button"-->
@@ -142,7 +142,7 @@
                         </h3>
                     </div>
                     <div class="col-lg-6" style="height: 114px; text-align: center; padding-top: 37px;">
-                        <a href="javascript:;" onclick="userListDownloadCSV()" class="btn btn-info">Download</a>
+                        <a href="/userlist"  class="btn btn-info">View</a>
                     </div>
 
                     <!-- /.panel-toolbar -->
@@ -162,7 +162,7 @@
                 <div class="panel-heading borderless" style="padding-bottom: 81px !important;">
                     <p class="subtitle text-lighten text-uppercase m-b-xs" style="    font-size: 18px;">TOTAL ORDERS</p>
                     <h3 class="m-a-0 p-a-0 ng-binding" style="font-size: 32px; text-transform: uppercase;">
-                        399.10757382 BTC
+                        {{data.total_orders}} BTC
                         <!--<a href="#/bonus/resume"-->
                         <!--type="button"-->
                         <!--style="color: black !important;"-->
@@ -185,8 +185,8 @@
                 <div class="panel-heading borderless" style="padding-bottom: 81px !important;">
                     <p class="subtitle text-lighten text-uppercase m-b-xs" style="    font-size: 18px;">TOTAL BONUS PAID</p>
                     <h3 class="m-a-0 p-a-0 ng-binding" style="font-size: 32px; text-transform: uppercase;">
-                        182.74683074 BTC
-                        <!--<a href="#/bonus/resume"-->
+                        {{data.total_bonus_paid}} BTC
+                        <!--182.74683074<a href="#/bonus/resume"-->
                         <!--type="button"-->
                         <!--style="color: black !important;"-->
                         <!--class="btn btn-default btn-home-more">-->

@@ -6,50 +6,57 @@
 
             <li class="menu-header">Main menu</li>
 
-          <li class="ng-scope active">
+          <li class="ng-scope nav active">
                 <a href="/">
                     <span class="fa fa-home rs-icon-menu"></span>General data
                 </a>
-            </li><li class="ng-scope">
+            </li><li class="ng-scope nav">
                 <a href="/userlist">
                     <span class="fa fa-user-circle-o rs-icon-menu"></span>User
                 </a>
             </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
 
             <!-- ngIf: $authentication.data.user.username != 'antunes' -->
-            <li class="ng-scope">
+            <!-- <li class="ng-scope">
                 <a href="/relation">
                     <span class="fa fa-area-chart rs-icon-menu"></span>Relatorio de Entradas
                 </a>
-            </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
+            </li> --><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
 
-            <!-- ngIf: $authentication.data.user.username != 'antunes' --><li class="ng-scope">
+            <!-- ngIf: $authentication.data.user.username != 'antunes' -->
+            <!-- <li class="ng-scope">
                 <a href="/relatorio-pg-parceiros">
                     <span class="fa fa-line-chart rs-icon-menu"></span>Relatorio Pagamento Parceiros
                 </a>
-            </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
+            </li> --><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
 
             <!-- ngIf: $authentication.data.user.username != 'antunes' -->
-            <li  class="ng-scope">
+            <li  class="ng-scope nav">
                 <a href="/carrer-qualifications">
                     <span class="fa fa-line-chart rs-icon-menu"></span>Relatorio Qualificações
                 </a>
             </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
 
             <!-- ngIf: $authentication.data.user.username != 'antunes' -->
-            <li class="ng-scope">
+            <li class="ng-scope nav">
                 <a href="/passports/list">
                     <span class="fa fa-address-card-o rs-icon-menu"></span>Gestor de Identidades
                 </a>
             </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
 
-            <!-- ngIf: $authentication.data.user.username != 'antunes' --><li ng-if="$authentication.data.user.username != 'antunes'" ng-class="{active: $location.path().indexOf('/mensagem') &gt;= 0}" class="ng-scope">
-                <a href="#/mensagem/list">
+            <!-- ngIf: $authentication.data.user.username != 'antunes' -->
+            <li class="ng-scope nav">
+                <a href="javascript:">
                     <span class="fa fa-bullhorn rs-icon-menu"></span>Msg Boas Vindas
                 </a>
-            </li><!-- end ngIf: $authentication.data.user.username != 'antunes' -->
-
-            <li ng-class="{active: $location.path().indexOf('/courses') &gt;= 0}">
+            </li>
+            <li class="ng-scope nav">
+                <a href="/courselist">
+                    <span class="fa fa-file-video-o rs-icon-menu"></span>Courses
+                </a>
+            </li>
+            <!-- end ngIf: $authentication.data.user.username != 'antunes' -->
+            <!-- <li ng-class="{active: $location.path().indexOf('/courses') &gt;= 0}">
                 <a href="#">
                     <span class="fa fa-file-video-o rs-icon-menu"></span>Cursos
                 </a>
@@ -86,12 +93,13 @@
                             </a>
                         </li>
                 </ul>
-            </li>
-            <!-- ngIf: $authentication.data.user.username != 'antunes' --><li ng-if="$authentication.data.user.username != 'antunes'" ng-class="/historychangemail" class="ng-scope">
+            </li> -->
+            <!-- ngIf: $authentication.data.user.username != 'antunes' -->
+            <!-- <li ng-if="$authentication.data.user.username != 'antunes'" ng-class="/historychangemail" class="ng-scope">
                 <a href="#/historychangemail">
                     <span class="fa fa-bullhorn rs-icon-menu"></span>History Change Email
                 </a>
-            </li>
+            </li> -->
         </ul>
 
         <!-- End sidebar menu -->

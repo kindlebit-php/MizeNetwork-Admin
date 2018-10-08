@@ -41,6 +41,8 @@ $(document).ready(function() {
 	$('#DataTableable').DataTable({"bSort" : false});
 
 });
+//alert(location.pathname);///passports/list
+  $('.nav a[href^="/' + location.pathname.split("/")[1] + '"]').parent().addClass('active');
 </script>
 
 <!-- Template Js -->

@@ -59,7 +59,7 @@
                         <table class="table table-striped" style="width:100%; " >
                             <thead>
                             <tr>
-                                <th>User id</th>
+                                <th>Sr.No</th>
                                 <th>OrderID</th>
                                 <th>Product Name</th>
                                 <th>Ewallet Address</th>
@@ -74,7 +74,7 @@
                              {{#each data }}  
                              
                                 <tr class="ng-scope">
-                                <td class="ng-binding">{{this.user_id}}</td>
+                                <td class="ng-binding">{{math @index '+' 1}}</td>
                                 <td class="ng-binding">{{this.order_id}}</td>
 
                                 <td class="ng-binding">

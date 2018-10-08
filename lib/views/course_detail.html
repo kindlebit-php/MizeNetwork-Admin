@@ -28,7 +28,7 @@
 <div class="rs-dashhead m-b-lg ng-scope">
     <div class="rs-dashhead-content">
         <div class="rs-dashhead-titles">
-            <h3 class="rs-dashhead-title m-t">User Bonus</h3>
+            <h3 class="rs-dashhead-title m-t">Course Detail</h3>
             <!-- Begin Toolbar toggle button on mobile -->
             <div class="rs-dashhead-toolbar" style="margin-top: -20px;">
 
@@ -44,11 +44,13 @@
     </div><!-- /.rs-dashhead-content -->
           <!-- Begin Breadcrumb -->
     <ol class="breadcrumb breadcrumb-arrow">
-        <li class="active">User Bonus List</li>
+        <li class="active">    <a class="btn btn-primary" style="color: #fff;" href="/add_course_list/{{courseID}}"><i class="fa fa-plus"></i> Add Course in list</a></li>
     </ol>
           <!-- End Breadcrumb -->
 </div><!-- /.rs-dashhead -->
 <!-- End Dashhead -->
+
+
 {{{err}}}
 <div class="container-fluid ng-scope">
     <div class="row">
@@ -56,49 +58,41 @@
             <div class="panel-body p-t-0 p-b-0" style="padding: 0px;">
                 <div class="col-md-12">
                     <div class="">
+                       
                         <table class="table table-striped" style="width:100%; " >
                             <thead>
                             <tr>
-                                <th>Bonus Binario</th>
-                                <th>Bonus indicacao direta</th>
-                                <th>Bonus indicacao indireta</th>
-                                <th>Bonus matching</th>
-                                <th>Bonus booster</th>
-                                <th>Bonus montly</th>
-                                <th>Bonus super pool</th>
-                                <th>Date</th>
+                                <th>Sr.No</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Video URL</th>
+                                <th>Create Date</th>
+                                <th>Action</th>
+                                
                             </tr>
                             </thead>
 
                             <tbody>
                              {{#each data }}  
-                             
+                               {{#each this.list }}  
                                 <tr class="ng-scope">
-                                <td class="ng-binding">{{this.bonus_binario}}</td>
-                                <td class="ng-binding">{{this.bonus_indicacao_direta}}</td>
+                                <td class="ng-binding">{{math @index '+' 1}}</td>
+                                <td class="ng-binding">{{this.title}}</td>
 
                                 <td class="ng-binding">
-                                   {{this.bonus_indicacao_indireta}}
+                                   {{this.description}}
+                                </td>
+                                <td> {{this.video_url}}</td>
+                                <td class="ng-binding">
+                                    {{this.crdate}}
                                 </td>
                                 <td class="ng-binding">
-                                    {{this.bonus_matching}}
+                                    <a class="btn btn-success" href="/courselist/edit/{{this.id}}"> Edit</a>
+                                    <a class="btn btn-danger" onclick="return confirm('Are you sure to delete this course?');" href="/courselist/del/{{this.id}}/{{this.course_id}}"> Delete</a>
                                 </td>
-                                <!-- <td class="ng-binding">
-                                     {{this.bonus_plano_carreira}}
-                                </td> -->
-                                <td class="ng-binding">
-                                   {{this.bonus_booster}}
-                                </td>
-                                <td class="ng-binding">
-                                   {{this.bonus_montly}}
-                                </td>
-                                <td class="ng-binding">
-                                   {{this.bonus_super_pool}}
-                                </td>
-                                <td class="ng-binding">
-                                   {{this.crdate}}
-                                </td>
+                                
                             </tr>  
+                             {{/each}}
                             {{/each}}
                             </tbody>
                         </table>
