@@ -75,70 +75,16 @@
     <div class="rs-dashhead m-b-lg">
         <div class="rs-dashhead-content">
             <div class="rs-dashhead-titles">
-                <!--<h6 class="rs-dashhead-subtitle text-uppercase">Account</h6>-->
-
                 <h6 class="rs-dashhead-subtitle text-uppercase">Gestor de Identidade</h6>
-                <!-- Begin Toolbar toggle button on mobile -->
-                <!--<div class="rs-dashhead-toolbar"-->
-                <!--style="margin-top: -20px;">-->
-
-                <!--<button ng-show="!showbalancedollar" ng-click="changeShowDollar()" class="btn btn-info btn-wide block-on-mobile">-->
-                <!--<span class="fa fa-dollar icon-btn m-r"></span>-->
-                <!--Show in Dollar-->
-                <!--</button>-->
-                <!--<button ng-show="showbalancedollar" ng-click="changeShowDollar()" class="btn btn-info btn-wide block-on-mobile">-->
-                <!--<span class="fa fa-bitcoin icon-btn m-r"></span>-->
-                <!--Show in BTC-->
-                <!--</button>-->
-                <!--</div>&lt;!&ndash; /.toggle-toolbar-btn &ndash;&gt;-->
-                <!-- End Toolbar toggle button on mobile -->
-            </div><!-- /.rs-dashhead-titles -->
-                  <!--<div class="rs-dashhead-toolbar">-->
-                  <!--<button type="button" class="btn btn-success btn-wide rs-btn-icon block-on-mobile">-->
-                  <!--<span class="gcon gcon-upload-to-cloud icon-btn"></span>-->
-                  <!--Upload Item-->
-                  <!--</button>-->
-                  <!--</div>&lt;!&ndash; /.rs-dashhead-toolbar &ndash;&gt;-->
-        </div><!-- /.rs-dashhead-content -->
-              <!-- Begin Breadcrumb -->
-              <!-- End Breadcrumb -->
-    </div><!-- /.rs-dashhead -->
-    <!-- End Dashhead -->
-    <!--<div class="row">
-        <div class="col-xs-12">
-            <div class="panel panel-plain panel-rounded" style="padding: 10px;">
-                <form name="user_search" novalidate="">
-                     <select name="usersearchtype" class="form-control input-sm ng-pristine ng-untouched ng-valid" style="width: 100px; display: inline-block;" id="usersearchtype" ng-model="usCTRL.user_search.type">
-                        <option value="username" selected="">Username</option>
-                        <option value="name" selected="">Name</option>
-                        <option value="email">E-mail</option>
-                        <option value="user_wallet">User Wallet</option>
-                        <option value="order_wallet">Order Wallet</option>
-                        <option value="order_id">Order ID</option>
-                    </select>
-                      <input id="user_search" style="width: 201px;float: left;height: 32px;" class="form-control" type="text">
-                    <button style="border-radius: 0;" type="submit" class="btn btn-info">Search
-                    </button>
-                    
-                </form>
             </div>
         </div>
-    </div>-->
-
+    </div>
     <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-plain panel-rounded">
                 <div class="panel-heading borderless">
                     <h3 class="panel-title"> Identidade List </h3>
-                    <!-- <p class="subtitle text-uppercase m-t ng-binding">0 results</p> -->
-                    <!-- Begin Panel Toolbar -->
-                    <!--<div class="panel-toolbar">-->
-                    <!--<ul class="list-inline m-a-0">-->
-                    <!--<li><i class="rs-refresh-panel icon-toolbar gcon gcon-cycle"></i></li>-->
-                    <!--</ul>-->
-                    <!--</div>&lt;!&ndash; /.panel-toolbar &ndash;&gt;-->
-                    <!-- End Panel Toolbar -->
-                </div><!-- /.panel-heading -->
+                </div>
                 <div class="panel-body">
                     <div class="">
                         <table id="usertable" class="table table-striped" style="width:100%; ">
@@ -157,7 +103,7 @@
                             {{#each data }}  
                             
                             <tr>
-                                <td>{{this.user_id.username}}</td>
+                                <td>{{this.username}}</td>
                                 <td>{{this.type_name}}</td>
 
                                 <td>
@@ -169,13 +115,13 @@
                                 </td>
                                 <td>
                                     <form method="post">
-                                        <input type="hidden" name="user_id" value="{{this._id}}">
+                                        <input type="hidden" name="user_id" value="{{this.id}}">
                                         <input type="hidden" name="accept" value="1">
                                         <button onclick="return confirm('Are you sure to accept the user document')" class="btn btn-success btn-wide stepy-finish" style="margin-top: 10px" type="submit">Aceitar </button>
                                     </form>
                                      {{#compare this.id_status 4 operator="!="}}
                                     <form method="post">
-                                        <input type="hidden" name="user_id" value="{{this._id}}">
+                                        <input type="hidden" name="user_id" value="{{this.id}}">
                                         <input type="hidden" name="reject" value="1">
                                         <button onclick="return confirm('Are you sure to rejeitar the user document')" class="btn btn-danger btn-wide stepy-finish" style="margin-top: 10px" type="submit">Rejeitar</button>
                                     </form>
