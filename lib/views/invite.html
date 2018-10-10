@@ -1,0 +1,117 @@
+<style class="ng-scope">
+
+    .filters a.active {
+        color: #71b6f9 !important;
+    }
+
+    #tech-companies-1 td {
+        line-height: 34px;
+    }
+    #DataTableable_filter label {
+        background: #4fc3f7;
+        color: #fff;
+        padding-left: 6px;
+        font-size: 13px;
+    }
+    input[type="search"] {
+        border: 1px solid #e1e8ed;
+        padding: 3px;color: #333;
+    }
+    .bg-default {
+        background-color: #172b4d !important;
+        text-align: center;
+    }
+    .color-swatch-header {
+        position: relative;
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: .25rem .25rem 0 0;
+        text-align: center;
+        padding-top: 0px;
+    }
+</style>
+
+
+<article class="rs-content-wrapper">
+        <div class="rs-content">
+    <div class="rs-inner ng-scope" ng-view="">
+    
+
+<!-- Begin Dashhead -->
+<div class="rs-dashhead m-b-lg ng-scope">
+    <div class="rs-dashhead-content">
+        <div class="rs-dashhead-titles">
+            <h3 class="rs-dashhead-title m-t">Send Invitation</h3>
+            <!-- Begin Toolbar toggle button on mobile -->
+            <div class="rs-dashhead-toolbar" style="margin-top: -20px;">
+
+            </div>
+            <!-- End Toolbar toggle button on mobile -->
+        </div><!-- /.rs-dashhead-titles -->
+              <!--<div class="rs-dashhead-toolbar">-->
+              <!--<button type="button" class="btn btn-success btn-wide rs-btn-icon block-on-mobile">-->
+              <!--<span class="gcon gcon-upload-to-cloud icon-btn"></span>-->
+              <!--Upload Item-->
+              <!--</button>-->
+              <!--</div>&lt;!&ndash; /.rs-dashhead-toolbar &ndash;&gt;-->
+    </div><!-- /.rs-dashhead-content -->
+          <!-- Begin Breadcrumb -->
+    <ol class="breadcrumb breadcrumb-arrow">
+        <li class="active">Invite to user</li>
+    </ol>
+          <!-- End Breadcrumb -->
+</div><!-- /.rs-dashhead -->
+<!-- End Dashhead -->
+{{{err}}}
+<figure class="col-lg-12 highlight ">
+    <pre class=" language-html color-0-header bg-default">
+      <form action="" method='POST' style="padding-top: 15px;">
+      <button onclick="return confirm('Are sure to send login invitation to old user!');" type="submit" name='invite' value="1" class="text-center btn btn-warning">Send Invitation</button>
+    </form>
+    </pre>
+</figure>
+<div class="container-fluid ng-scope">
+    <div class="row">
+        <div class="panel panel-plain" style="    padding: 15px;">
+            <div class="panel-body p-t-0 p-b-0" style="padding: 0px;">
+                <div class="col-md-12">
+                    <div class="">
+                        <h3>Response</h3>
+                        <table class="table table-striped" style="width:100%; " >
+                            
+                            <tbody>
+                             {{#each data }}  
+                              <tr>  
+                                
+                                <td class="ng-binding">
+                                    <div class="col-md-12">
+                                  {{#equal this.error 100}}
+                                  <div class="alert alert-danger">Error: {{this.error}} <b>{{this.msg}}</b></div>
+                                  {{else}}
+                                  <div class="alert alert-success">Error: {{this.error}} <b>{{this.msg}}</b></div> 
+                                  {{/equal}}
+                                  
+                                  
+                                  
+                                   </div>
+                                </td>
+                               
+                            </tr>  
+                            {{/each}}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+</div><!-- /.rs-inner -->
+        </div><!-- /.rs-content -->
+    </article>
